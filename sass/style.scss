@@ -18,21 +18,15 @@ body {
 	font: 1.2em/1.5 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", sans-serif;
 	background: #000;
 	
-	/*a {
-		width: 100%;
-		font-size: 4em;
-		font-weight: bold;
+	a {
 		color: #fff;
 		text-decoration: none;
-		text-align: center;
-		position: fixed;
-		top: 50%;
-		margin-top: -2em;
+		position: relative;
 
 		&:visited {
 			color: #fff;
 		}
-	}*/
+	}
 
 	#bg {
 		width: 100%;
@@ -41,7 +35,6 @@ body {
 		div {
 			width: 10%;
 			height: 10%;
-			background: red;
 			float: left;
 			font-size: 4em;
 			font-weight: bold;
@@ -50,7 +43,7 @@ body {
 		}
 
 		@for $i from 1 through 100 {
-			div:nth-child(#{$i}) {
+			div#c#{$i} {
 				background: darken(lighten($team, 100%), $i*1%);
 
 				/*@if $i <= 10 { float: left; }
