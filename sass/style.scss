@@ -26,6 +26,32 @@ body {
 		&:visited {
 			color: #fff;
 		}
+
+		div {
+			&:hover:before {
+				content: attr(data-twttr);
+				background: rgb(50, 50, 50);
+				width: 100%;
+				position: absolute;
+				top: 0; // ~ -23%
+				left: 0;
+				font-size: 0.2em;
+				text-align: center;
+				border-radius: 1em;
+			}
+			/*&:hover:after {
+				content: "";
+				width: 0; 
+				height: 0; 
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+				border-top: 10px solid rgb(50, 50, 50);
+				position: absolute;
+				top: 0;
+				left: 50%;
+				margin: 0 0 0 -10px;
+			}*/
+		}
 	}
 
 	#bg {
@@ -40,6 +66,7 @@ body {
 			font-weight: bold;
 			color: #fff;
 			text-align: center;
+			position: relative;
 		}
 
 		@for $i from 1 through 100 {

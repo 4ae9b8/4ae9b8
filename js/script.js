@@ -16,7 +16,8 @@
 		var el = document.querySelector("#c"+(43+parseInt(key)));
 
 		if (el != undefined) {
-			el.parentNode.href="https://twitter.com/"+members[key]+"/"; 
+			el.dataset.twttr = "@"+members[key];
+			el.parentNode.href = "https://twitter.com/"+members[key]+"/"; 
 		}
 	}
 })();
