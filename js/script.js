@@ -12,7 +12,11 @@
 
 	var members = ["FWeinb", "HugoGiraudel", "Mobilpadde", "TheBabyDino", "TimPietrusky", "SaraSoueidan"].shuffle(); // Alphabetic => Random
 
-	for(var key in members){ 
-		document.querySelector("#c"+(43+parseInt(key))).parentNode.href="https://twitter.com/"+members[key]+"/"; 
+	for (var key in members) { 
+		var el = document.querySelector("#c"+(43+parseInt(key)));
+
+		if (el != undefined) {
+			el.parentNode.href="https://twitter.com/"+members[key]+"/"; 
+		}
 	}
 })();
