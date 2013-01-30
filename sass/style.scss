@@ -28,7 +28,7 @@ body {
 		}
 
 		div {
-			&:hover:before {
+			&:before {
 				content: attr(data-twttr);
 				background: rgb(50, 50, 50);
 				width: 100%;
@@ -38,6 +38,11 @@ body {
 				font-size: 0.2em;
 				text-align: center;
 				border-radius: 1em;
+				opacity: 0;
+				@include transition(opacity .25s ease-in-out);
+			}
+			&:hover:before{
+				opacity: 1;
 			}
 			/*&:hover:after {
 				content: "";
