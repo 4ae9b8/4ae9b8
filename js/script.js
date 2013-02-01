@@ -30,7 +30,7 @@
 		}
 	}
 
-	var num = Math.round(Math.random()*100); // How many inverted squared for the next 15 seconds
+	var num = Math.round(Math.random()*100); // Number of inverted squared for the next 15 seconds
 	function invert(){
 		var els = getElementsByClassName("inverted");
 		for(var i in els){ els[i].className = ""; }
