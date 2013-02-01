@@ -5,27 +5,38 @@
 
 // Mixins
 @mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @-ms-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-	@content;
-  } 
+	@-webkit-keyframes #{$name} {
+		@content; 
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@-o-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	} 
+}
+@mixin animation($content) {
+	-webkit-animation: #{$content};
+	-moz-animation: #{$content};
+	-ms-animation: #{$content};
+	-o-animation: #{$content};
+	animation: #{$content};
 }
 
 // Variables
 $team: #4ae9b8;
+$speed: 15s;
 
 // Styles
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 html, body { height: 100%; width: 100%; }
@@ -88,12 +99,23 @@ body {
 			color: #fff;
 			text-align: center;
 			position: relative;
+			@include transition(-webkit-filter $speed ease-in-out);
 		}
 
 		@for $i from 1 through 100 {
 			div#c#{$i} {
-				background: darken(lighten($team, 100%), $i*1%);
+				@include animation(bg $speed infinite);
 			}
 		}
+
+		div.inverted {
+			-webkit-filter: invert(100%);
+		}
 	}
+}
+
+@include keyframes(bg) {
+	0% { background: #000; }
+	50% { background: #fff; }
+	100% { background: #000; }
 }
