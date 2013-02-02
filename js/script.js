@@ -30,7 +30,7 @@
 		}
 	}
 
-	/*var num = Math.round(Math.random()*100); // Number of inverted squared for the next 15 seconds
+	var num = Math.round(Math.random()*100); // Number of inverted squared for the next 15 seconds
 	function invert(){
 		var els = getElementsByClassName("inverted");
 		for(var i in els){ els[i].className = ""; }
@@ -43,5 +43,19 @@
 		num = Math.round(Math.random()*100);
 	}
 	invert();
-	setInterval(function(){ invert() }, 15000);*/
+	setInterval(function(){ invert() }, 15000);
+
+	window.onhashchange = function(){
+		switch(location.hash){
+			case "#1":
+				document.querySelector("link").href = "stylesheets/style.css";
+				break;
+			case "#2":
+				document.querySelector("link").href = "stylesheets/whoa.css";
+				break;
+			case "#3":
+				document.querySelector("link").href = "stylesheets/slide.css";
+				break;
+		}
+	}
 })();
