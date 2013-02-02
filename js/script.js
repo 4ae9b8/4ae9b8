@@ -45,7 +45,7 @@
 	invert();
 	setInterval(function(){ invert() }, 15000);
 
-	window.onhashchange = function(){
+	function hashStyle(){
 		switch(location.hash){
 			case "#1":
 				document.querySelector("link").href = "stylesheets/style.css";
@@ -58,4 +58,6 @@
 				break;
 		}
 	}
+	hashStyle();
+	window.onhashchange = function(){ hashStyle(); }
 })();
