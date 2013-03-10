@@ -20,7 +20,7 @@
 	    return this;
 	}
 
-	var members = ["FWeinb", "HugoGiraudel", "Mobilpadde", "TheBabyDino", "TimPietrusky", "SaraSoueidan"].shuffle(); // Alphabetic => Random
+	var members = ["FWeinb", "HugoGiraudel", "Mobilpadde", "_joshnh", "TimPietrusky", "SaraSoueidan"].shuffle(); // Alphabetic => Random
 	for (var key in members) { 
 		var el = document.querySelector("#c"+(43+parseInt(key)));
 
